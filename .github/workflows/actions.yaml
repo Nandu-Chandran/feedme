@@ -2,7 +2,7 @@ name: run FeedGrabber
 
 on:
   schedule:
-    - cron: '*/10 * * * *' 
+    - cron: '*/2 * * * *' 
 
 jobs:
   build:
@@ -23,3 +23,9 @@ jobs:
 
       - name: execute py script # run main.py
         run: python daily-feed.py
+      - name: Commit and push changes
+        run: git config --local user.email "actions@github.com"
+             git config --local user.name "GitHub Actions"
+             git add index.html
+             git commit -m "Generate HTML"
+             git push
