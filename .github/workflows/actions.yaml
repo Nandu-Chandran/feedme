@@ -2,7 +2,7 @@ name: run FeedGrabber
 
 on:
   schedule:
-    - cron: '*/5 * * * *' 
+    - cron: '0 8 * * *' 
 
 jobs:
   build:
